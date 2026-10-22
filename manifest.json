@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Pixlaria Bot & Automation Suite",
+  "version": "1.0.0",
+  "description": "Full-featured automation assistant for Pixlaria: Entity radar, auto-looting with item filters, targeted combat loop, spell rotation, and QoL utilities.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.pixlaria.com/*",
+    "*://pixlaria.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.pixlaria.com/*",
+        "*://pixlaria.com/*"
+      ],
+      "js": ["inject.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Pixlaria Bot Control"
+  }
+}
